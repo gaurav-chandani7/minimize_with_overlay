@@ -53,7 +53,7 @@ class _HomePageState extends State<HomePage> {
           ));
     });
     if (!context.read<AppStateModel>().isOverlayPlayerAdded) {
-      WidgetsBinding.instance?.addPostFrameCallback((_) {
+      WidgetsBinding.instance.addPostFrameCallback((_) {
         _insertOverlay(context);
         context.read<AppStateModel>().setIsOverlayPlayerAdded(true);
       });
