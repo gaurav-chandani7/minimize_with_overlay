@@ -1,4 +1,3 @@
-import 'dart:developer';
 import 'dart:io';
 
 import 'package:flutter/cupertino.dart';
@@ -135,7 +134,7 @@ class _MinimizeVideoWidgetState extends State<MinimizeVideoWidget> {
                             setState(() {});
                           }),
                       CupertinoButton(
-                          child: Icon(CupertinoIcons.xmark),
+                          child: const Icon(CupertinoIcons.xmark),
                           onPressed: () {
                             context
                                 .read<AppStateModel>()
@@ -157,7 +156,7 @@ class FullSizeVideoPage extends StatelessWidget {
   final String videoName;
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: MediaQuery.of(context).size.height,
       width: MediaQuery.of(context).size.width,
       child: Platform.isIOS
@@ -167,7 +166,7 @@ class FullSizeVideoPage extends StatelessWidget {
                     onPressed: () {
                       context.read<AppStateModel>().setIsVideoMinimized(true);
                     },
-                    child: Icon(CupertinoIcons.chevron_down)),
+                    child: const Icon(CupertinoIcons.chevron_down)),
               ),
               child: getFullPageUI(context),
             )
@@ -177,7 +176,7 @@ class FullSizeVideoPage extends StatelessWidget {
                     onPressed: () {
                       context.read<AppStateModel>().setIsVideoMinimized(true);
                     },
-                    child: Icon(CupertinoIcons.chevron_down)),
+                    child: const Icon(CupertinoIcons.chevron_down)),
               ),
               body: getFullPageUI(context),
             ),
@@ -212,27 +211,27 @@ class FullSizeVideoPage extends StatelessWidget {
                 height: 300,
                 color: Colors.black,
                 alignment: Alignment.center,
-                child: CircularProgressIndicator(),
+                child: const CircularProgressIndicator(),
               );
             }
           }),
-          SizedBox(height: 5),
+          const SizedBox(height: 5),
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Text(
               videoName,
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
+              style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
             ),
           ),
-          SizedBox(height: 5),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
+          const SizedBox(height: 5),
+          const Padding(
+            padding: EdgeInsets.all(8.0),
             child: Text(
                 "Dummy description Dummy description Dummy description Dummy description Dummy description Dummy description Dummy description Dummy description Dummy description Dummy description Dummy description Dummy description Dummy description Dummy description"),
           ),
-          SizedBox(height: 5),
-          Padding(
-            padding: const EdgeInsets.fromLTRB(8, 12, 8, 0),
+          const SizedBox(height: 5),
+          const Padding(
+            padding: EdgeInsets.fromLTRB(8, 12, 8, 0),
             child: Text("Other section 1"),
           ),
           Padding(
@@ -242,8 +241,8 @@ class FullSizeVideoPage extends StatelessWidget {
               decoration: BoxDecoration(border: Border.all(color: Colors.grey)),
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.fromLTRB(8, 12, 8, 0),
+          const Padding(
+            padding: EdgeInsets.fromLTRB(8, 12, 8, 0),
             child: Text("Other section 2"),
           ),
           Padding(
@@ -253,8 +252,8 @@ class FullSizeVideoPage extends StatelessWidget {
               decoration: BoxDecoration(border: Border.all(color: Colors.grey)),
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.fromLTRB(8, 12, 8, 0),
+          const Padding(
+            padding: EdgeInsets.fromLTRB(8, 12, 8, 0),
             child: Text("Other section 3"),
           ),
           Padding(
@@ -292,7 +291,7 @@ class _ControlsVideoPlayerState extends State<ControlsVideoPlayer> {
           duration: const Duration(milliseconds: 50),
           reverseDuration: const Duration(milliseconds: 200),
           child: widget.videoPlayerController!.value.isPlaying
-              ? SizedBox.shrink()
+              ? const SizedBox.shrink()
               : Container(
                   color: Colors.black26,
                   child: const Center(
